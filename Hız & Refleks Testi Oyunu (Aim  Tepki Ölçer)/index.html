@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ReflexLab | Milisaniye Refleks & Aim Testi</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="badge">⚡ REFLEKS & AİM TESTİ</div>
+      <h1>ReflexLab</h1>
+      <p>Ekranda beliren hedefleri en kısa sürede vurun ve milisaniye cinsinden tepki sürenizi ölçün.</p>
+    </header>
+
+    <!-- Üst Kontrol ve İstatistik Paneli -->
+    <section class="hud">
+      <div class="hud-box">
+        <span class="hud-label">Hedef</span>
+        <strong id="progressText">0 / 15</strong>
+      </div>
+      <div class="hud-box">
+        <span class="hud-label">Son Tepki</span>
+        <strong id="lastTimeText">-</strong>
+      </div>
+      <div class="hud-box highlight">
+        <span class="hud-label">Ortalama</span>
+        <strong id="avgTimeText">-</strong>
+      </div>
+      <div class="hud-box">
+        <span class="hud-label">Rekor (En İyi)</span>
+        <strong id="bestTimeText">-</strong>
+      </div>
+    </section>
+
+    <!-- Oyun Ayarları -->
+    <section class="controls">
+      <div class="control-group">
+        <label for="difficultySelect">Hedef Boyutu:</label>
+        <select id="difficultySelect">
+          <option value="64">Kolay (Büyük - 64px)</option>
+          <option value="44" selected>Orta (Standart - 44px)</option>
+          <option value="28">Zor (Küçük - 28px)</option>
+        </select>
+      </div>
+
+      <div class="control-group">
+        <label for="targetCountSelect">Hedef Sayısı:</label>
+        <select id="targetCountSelect">
+          <option value="10">10 Hedef</option>
+          <option value="15" selected>15 Hedef</option>
+          <option value="30">30 Hedef</option>
+        </select>
+      </div>
+
+      <button type="button" id="startBtn" class="btn-primary">▶ Oyunu Başlat</button>
+    </section>
+
+    <!-- Oyun Alanı (Arena) -->
+    <main id="arena" class="arena">
+      <div id="overlay" class="overlay">
+        <h2 id="overlayTitle">Reflekslerini Test Etmeye Hazır Mısın?</h2>
+        <p id="overlayDesc">Başlat butonuna bas ve çıkan hedeflere olabildiğince hızlı tıkla. Boşa tıklamak ceza puanı ekler!</p>
+        <div id="resultSummary" class="result-summary hidden"></div>
+      </div>
+    </main>
+
+    <footer>
+      <p>🎯 İpucu: Boşa yapılan her tıklama (miss) ortalamanıza +50 ms ceza olarak yansır.</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
